@@ -73,7 +73,7 @@ parser ParserImpl(packet_in packet,
     state parse_ipv10 {
         packet.extract(hdr.ipv10);
         transition select(packet.lookahead<ipv4_addr_t>().zero){
-	      0000: parse_ipv4_addr;
+	      0: parse_ipv4_addr;
 	      default: parse_ipv6_addr;
 	}
     }
